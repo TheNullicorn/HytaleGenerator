@@ -1,0 +1,12 @@
+<Project>
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+        <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageVersion Include="Noesis.App" Version="4.0.1" />
+        <PackageVersion Include="Noesis.App.Displays.X11" Version="4.0.1" />
+        <PackageVersion Include="Noesis.App.RenderContexts.GLX" Version="4.0.1" />
+        <PackageVersion Include="Noesis.GUI" Version="4.0.1.18263" />
+    </ItemGroup>
+</Project>

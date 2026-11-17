@@ -1,0 +1,6 @@
+<Solution>
+    <Folder Name="/src/">
+        <Project Path="src/HytaleGenerator.Math/HytaleGenerator.Math.csproj"/>
+        <Project Path="src/HytaleGenerator.NodeEditor/HytaleGenerator.NodeEditor.csproj"/>
+    </Folder>
+</Solution>

@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Noesis.App"/>
+        <PackageReference Include="Noesis.GUI"/>
+        <PackageReference Include="Noesis.App.Displays.X11"/>
+        <PackageReference Include="Noesis.App.RenderContexts.GLX"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../HytaleGenerator.Math/HytaleGenerator.Math.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="./**/*.xaml">
+            <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+            <SubType>Designer</SubType>
+            <LogicalName>$([System.String]::Copy('%(RecursiveDir)%(Filename)%(Extension)').Replace('/','.'))</LogicalName>
+        </EmbeddedResource>
+        <EmbeddedResource Include="./**/*.ttf">
+            <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+            <LogicalName>$([System.String]::Copy('%(RecursiveDir)%(Filename)%(Extension)').Replace('/','.'))</LogicalName>
+        </EmbeddedResource>
+        <EmbeddedResource Include="./**/*.otf">
+            <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+            <LogicalName>$([System.String]::Copy('%(RecursiveDir)%(Filename)%(Extension)').Replace('/','.'))</LogicalName>
+        </EmbeddedResource>
+        <EmbeddedResource Include="./**/*.png">
+            <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+            <LogicalName>$([System.String]::Copy('%(RecursiveDir)%(Filename)%(Extension)').Replace('/','.'))</LogicalName>
+        </EmbeddedResource>
+        <EmbeddedResource Include="./**/*.jpg">
+            <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+            <LogicalName>$([System.String]::Copy('%(RecursiveDir)%(Filename)%(Extension)').Replace('/','.'))</LogicalName>
+        </EmbeddedResource>
+        <EmbeddedResource Include="./NoesisLicense.txt">
+            <Link>NoesisLicense.txt</Link>
+            <LogicalName>NoesisLicense.txt</LogicalName>
+        </EmbeddedResource>
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,42 @@
+<UserControl x:Class="HytaleGenerator.NodeEditor.UI.Node"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Border BorderThickness="0" CornerRadius="8">
+        <!-- Subtle drop shadow behind the whole node. -->
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="5" ShadowDepth="5" Opacity="0.2" />
+        </Border.Effect>
+
+        <!-- This Grid is to place BorderOpacityMask and the StackPanel right on top of each other so that they share
+        the same dimensions. -->
+        <Grid>
+            <!-- This Grid is to make the BorderOpacityMask invisible to the user. If we put `Opacity="0"` directly on
+            the Border element, the masking process would consider it invisible not take effect. -->
+            <Grid Opacity="0">
+                <!-- This invisible border is used to clip the StackPanel contents to its rounded corners. i.e. it
+                prevents the header's background from having its sharp corners stick outside the node. -->
+                <Border x:Name="BorderOpacityMask" BorderThickness="0" CornerRadius="8" Background="White" />
+            </Grid>
+
+            <StackPanel Width="200" Background="{StaticResource Node.Body.Fill}">
+                <StackPanel.OpacityMask>
+                    <VisualBrush Visual="{Binding ElementName=BorderOpacityMask}" />
+                </StackPanel.OpacityMask>
+
+                <!-- Placeholder: header -->
+                <TextBlock Text="Howdy :D" FontSize="17" Background="#78b865" Padding="4,2,0,2" Margin="0,0,0,10" />
+
+                <!-- Placeholder: body. -->
+                <StackPanel>
+                    <Viewbox Margin="5,0,5,10">
+                        <StackPanel>
+                            <TextBlock Text="LMB+Drag to Select" />
+                            <TextBlock Text="RMB+Drag to Pan" />
+                            <TextBlock Text="Scroll to Zoom" />
+                        </StackPanel>
+                    </Viewbox>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

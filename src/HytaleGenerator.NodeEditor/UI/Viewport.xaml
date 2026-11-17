@@ -1,0 +1,14 @@
+<UserControl x:Class="HytaleGenerator.NodeEditor.UI.Viewport"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:HytaleGenerator.NodeEditor.UI">
+    <Canvas Background="{StaticResource Viewport.Body.Fill}">
+        <!-- Viewport space. This is the element whose transform we change when panning and zooming. -->
+        <Canvas x:Name="Viewport.Body">
+            <!-- Placeholder node. Delete me later plz <3 -->
+            <local:Node Canvas.Top="50" Canvas.Left="50" Width="200" />
+        </Canvas>
+        <!-- Selection rectangle. -->
+        <Rectangle x:Name="Viewport.Selection" Visibility="Hidden" Style="{StaticResource Viewport.Selection.Style}" />
+    </Canvas>
+</UserControl>
